@@ -1,4 +1,4 @@
-#Pi zza Project for Code Louisville python may 2020
+##Pi zza Project for Code Louisville python may 2020
 
 first_name = input('Hello what is your name?  ')
 order_pizza = input("Hello {} would you like to order a pizza?   Y/N   ".format(first_name)).upper()
