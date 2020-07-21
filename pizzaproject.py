@@ -3,40 +3,51 @@
 
 ##Function to select Pizza pickup time.
 def select_time():
-    TimeSlots = ['6:00 - 6:15', '6:15 - 6:30', '6:30 - 6:45', '6:45 - 7:00']    
+    time_slots = ['6:00 - 6:15', '6:15 - 6:30', '6:30 - 6:45', '6:45 - 7:00']    
     i = 0
-    displayCounter = i + 1
+    #display_counter = i + 1
     print('\nPlease Select a pick-up time slot, by selecting the number by the time slot you choose.')
-    for times in range(len(TimeSlots)):
-        print ('\n'+str(displayCounter)+ "). " + TimeSlots[times] + '\n')
-        displayCounter +=1
-    UserTimeSelect = input()
-    UserTimeChoice = int(UserTimeSelect) -1 
-    print("Great you've Selected {}, as your pick up window!".format(TimeSlots[UserTimeChoice]))
+    for i, time in enumerate(time_slots):
+        print(f'\n{str(i+1)}. {time}\n')
+    # for times in range(len(time_slots)):
+    #     print ('\n'+str(display_counter)+ "). " + time_slots[times] + '\n')
+    #     display_counter +=1
+    user_time_select = input()
+    user_time_choice = int(user_time_select) -1 
+    print("\nGreat you've Selected {}, as your pick up window!".format(time_slots[user_time_choice]))
+    return(time_slots[user_time_choice])
     
 
 ##Function to select toppings for pizza
 def order_pizza():
-    ToppingChoices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
+    topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
     i = 0 
-    displayCounterToppings = i + 1
+    #display_counter_toppings = i + 1
     print("\nWhat do you want on the pizza?\n")
-    for toppings in range(len(ToppingChoices)):
-        print ('\n'+str(displayCounterToppings)+ "). " + ToppingChoices[toppings] + '\n')
-        displayCounterToppings +=1
-    UserToppingSelect = input()
-    UserToppingChoice = int(UserToppingSelect) -1
-    print("Great you've selected to top your pizza with {}!".format(ToppingChoices[UserToppingChoice]))
+    for i, toppings in enumerate (topping_choices):
+        print(f'\n{str(i+1)}. {toppings}\n')
+    # for toppings in range(len(topping_choices)):
+    #     print ('\n'+str(display_counter_toppings)+ "). " + topping_choices[toppings] + '\n')
+    #     display_counter_toppings +=1
+    user_topping_select = input()
+    user_topping_choice = int(user_topping_select) -1
+    print("\nGreat you've selected to top your pizza with {}!".format(topping_choices[user_topping_choice]))
+    return(topping_choices[user_topping_choice])
+
+##Function that give you overview of order and toppings
+def order_result():
+    print(f'\nYou ordered a {order_topping_choice} pizza. Please pick it up between {order_time_choice}.\n')
 
 ##Main code
-first_name = input('Hello what is your name?  ')
-ask_to_order = input("Hello {} would you like to order a pizza?   Y/N   ".format(first_name)).upper()
+first_name = input('\n\nHello what is your name?  ') 
+ask_to_order = input("\n\nHello {} would you like to order a pizza?   Y/N   ".format(first_name)).upper()
 
 
 if ask_to_order == 'Y':
     print("Awesome Sauce! Let's get started.")
-    select_time()
-    order_pizza() 
+    order_time_choice = select_time()
+    order_topping_choice = order_pizza() 
+    order_result()
 else:
     print("No worries! Have a great day.")
 

@@ -1,2 +1,5 @@
 -Pizza ordering app 
 -Running on console
+-need to add validations
+-seperate variables with underscores
+-F string formatted strings
