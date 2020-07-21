@@ -5,13 +5,9 @@
 def select_time():
     time_slots = ['6:00 - 6:15', '6:15 - 6:30', '6:30 - 6:45', '6:45 - 7:00']    
     i = 0
-    #display_counter = i + 1
     print('\nPlease Select a pick-up time slot, by selecting the number by the time slot you choose.')
     for i, time in enumerate(time_slots):
         print(f'\n{str(i+1)}. {time}\n')
-    # for times in range(len(time_slots)):
-    #     print ('\n'+str(display_counter)+ "). " + time_slots[times] + '\n')
-    #     display_counter +=1
     user_time_select = input()
     user_time_choice = int(user_time_select) -1 
     print("\nGreat you've Selected {}, as your pick up window!".format(time_slots[user_time_choice]))
@@ -22,13 +18,9 @@ def select_time():
 def order_pizza():
     topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
     i = 0 
-    #display_counter_toppings = i + 1
     print("\nWhat do you want on the pizza?\n")
     for i, toppings in enumerate (topping_choices):
         print(f'\n{str(i+1)}. {toppings}\n')
-    # for toppings in range(len(topping_choices)):
-    #     print ('\n'+str(display_counter_toppings)+ "). " + topping_choices[toppings] + '\n')
-    #     display_counter_toppings +=1
     user_topping_select = input()
     user_topping_choice = int(user_topping_select) -1
     print("\nGreat you've selected to top your pizza with {}!".format(topping_choices[user_topping_choice]))
@@ -44,12 +36,12 @@ ask_to_order = input("\n\nHello {} would you like to order a pizza?   Y/N   ".fo
 
 
 if ask_to_order == 'Y':
-    print("Awesome Sauce! Let's get started.")
+    print("\n\nAwesome Sauce! Let's get started.")
     order_time_choice = select_time()
     order_topping_choice = order_pizza() 
     order_result()
 else:
-    print("No worries! Have a great day.")
+    print("\n\nNo worries! Have a great day.")
 
 
     
