@@ -1,5 +1,7 @@
 ##Pizza Project for Code Louisville python may 2020
 
+
+##Function to select Pizza pickup time.
 def select_time():
     TimeSlots = ['6:00 - 6:15', '6:15 - 6:30', '6:30 - 6:45', '6:45 - 7:00']    
     i = 0
@@ -13,7 +15,7 @@ def select_time():
     print("Great you've Selected {}, as your pick up window!".format(TimeSlots[UserTimeChoice]))
     
 
-
+##Function to select toppings for pizza
 def order_pizza():
     ToppingChoices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
     i = 0 
@@ -22,9 +24,11 @@ def order_pizza():
     for toppings in range(len(ToppingChoices)):
         print ('\n'+str(displayCounterToppings)+ "). " + ToppingChoices[toppings] + '\n')
         displayCounterToppings +=1
+    UserToppingSelect = input()
+    UserToppingChoice = int(UserToppingSelect) -1
+    print("Great you've selected to top your pizza with {}!".format(ToppingChoices[UserToppingChoice]))
 
-
-
+##Main code
 first_name = input('Hello what is your name?  ')
 ask_to_order = input("Hello {} would you like to order a pizza?   Y/N   ".format(first_name)).upper()
 

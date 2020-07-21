@@ -1,1 +1,2 @@
-Readme created to remember how to use git and git hub. 
+-Pizza ordering app 
+-Running on console
