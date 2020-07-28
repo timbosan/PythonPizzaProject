@@ -16,19 +16,21 @@ def select_time():
 
 ##Function to select toppings for pizza
 def order_pizza():
-    topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil', 'Finished Adding']
+    topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
     customer_topping_choices = []
     i = 0 
-    print("\nWhat do you want on the pizza?\n")
-    ##while (user_topping_select != 7)
+    print("What do you want on the pizza?")
     for i, toppings in enumerate (topping_choices):
-        print(f'\n{str(i+1)}. {toppings}\n')
-    user_topping_select = input()
-    user_topping_choice = int(user_topping_select) -1
-    customer_topping_choices.append(topping_choices[user_topping_choice])
-    customer_topping_choices_combined = ()
-    print("\nGreat you've selected to top your pizza with {}!".format(topping_choices[user_topping_choice]))
-    return(topping_choices[user_topping_choice])
+        print(f'{str(i+1)}. {toppings}')
+    print('0. Done')
+    user_topping_select = ''
+    while user_topping_select != '0':
+        user_topping_select = input('Select a topping: ')
+        if user_topping_select != '0':
+            user_topping_choice = int(user_topping_select) -1
+            customer_topping_choices.append(topping_choices[user_topping_choice])
+            print("These are you toppings so far: {}".format(', '.join(customer_topping_choices)))
+    return customer_topping_choices
 
 ##Function that give you overview of order and toppings
 def order_result():

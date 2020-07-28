@@ -3,5 +3,7 @@
 -need to add validations?
 
 -adding while loop to toppings section that will produce running string. 
--want order/pickup time to be save to JSON file 
+ 
 
+-show where req
+-let  user what is req is req and which program to run
