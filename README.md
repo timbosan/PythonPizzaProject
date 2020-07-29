@@ -13,12 +13,6 @@ Project Requirements
 -The customer_topping_choices list is populated with the users toppings selecitons, these values are retrieved and placed in a string for the user to see.
 
 
--Pizza ordering app 
--Running on console
--need to add validations?
-
--adding while loop to toppings section that will produce running string. 
- 
-
--show where req
--let  user what is req is req and which program to run
+Future Implementations:
+-log each pizza and save to file
+-allow for user to enter email address to get copy of order

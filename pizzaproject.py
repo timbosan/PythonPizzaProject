@@ -60,7 +60,7 @@ if ask_to_order == 'Y':
     order_result()
     til_friday = days_til_friday()
     print (f'See you in {til_friday} days!!')
-    exit()
+   
 else:
     print("\n\nNo worries! Have a great day.")
 
