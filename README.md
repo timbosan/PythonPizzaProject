@@ -12,6 +12,7 @@ Project Requirements
 -The current day is compared to the following Friday to give the user a days til pickup prompt. 
 -The customer_topping_choices list is populated with the users toppings selecitons, these values are retrieved and placed in a string for the user to see.
 
+-Current number of commits: 23
 
 Future Implementations:
 -log each pizza and save to file
