@@ -1,13 +1,19 @@
 ##Pizza Project for Code Louisville python may 2020
+import datetime
 
+def days_til_friday():
+    today = datetime.date.today()
+    friday = today + datetime.timedelta( (4-today.weekday()) % 7 )
+    til_friday = (friday - today)
+    return til_friday.days
 
 ##Function to select Pizza pickup time.
 def select_time():
-    time_slots = ['6:00 - 6:15', '6:15 - 6:30', '6:30 - 6:45', '6:45 - 7:00']    
+    time_slots = ['6:00PM - 6:15PM', '6:15PM - 6:30PM', '6:30PM - 6:45PM', '6:45PM - 7:00PM']    
     i = 0
-    print('\nPlease Select a pick-up time slot, by selecting the number by the time slot you choose.')
+    print('Please Select a Friday pick-up time, by selecting the number by the time slot you choose.')
     for i, time in enumerate(time_slots):
-        print(f'\n{str(i+1)}. {time}\n')
+        print(f'{str(i+1)}. {time}')
     user_time_select = input()
     user_time_choice = int(user_time_select) -1 
     print("\nGreat you've Selected {}, as your pick up window!".format(time_slots[user_time_choice]))
@@ -16,7 +22,7 @@ def select_time():
 
 ##Function to select toppings for pizza
 def order_pizza():
-    topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapenos', 'Mushrooms', 'Hot Honey','Basil']
+    topping_choices = ['Pepperoni', 'Italian Sausage', 'Jalapeno', 'Mushroom', 'Hot Honey','Basil']
     customer_topping_choices = []
     i = 0 
     print("What do you want on the pizza?")
@@ -32,9 +38,9 @@ def order_pizza():
             print("These are you toppings so far: {}".format(', '.join(customer_topping_choices)))
     return customer_topping_choices
 
-##Function that give you overview of order and toppings
+##Function that gives you overview of order and toppings
 def order_result():
-    print(f'\nYou ordered a {order_topping_choice} pizza. Please pick it up between {order_time_choice}.\n')
+    print(f'\nYou ordered a {", ".join(order_topping_choice)} pizza. Please pick it up between {order_time_choice}.\n')
 
 ##Main code
 first_name = input('\n\nHello what is your name?  ') 
@@ -44,32 +50,25 @@ ask_to_order = input("\n\nHello {} would you like to order a pizza?   Y/N   ".fo
 if ask_to_order == 'Y':
     print("\n\nAwesome Sauce! Let's get started.")
     order_time_choice = select_time()
-    order_topping_choice = order_pizza() 
+    
+    while (True):
+        order_topping_choice = order_pizza() 
+        print(f'Great you have ordered a pizza with {", ".join(order_topping_choice)} on it.')
+        another_pizza = input('Would you like to order another pizza?   Y/N  ').upper()
+        if another_pizza == 'N':
+           break
     order_result()
+    til_friday = days_til_friday()
+    print (f'See you in {til_friday} days!!')
+    exit()
 else:
     print("\n\nNo worries! Have a great day.")
 
 
-    
 
 
 
 
-# while True:
-#     try:
-  
-# except NameError:
-#     print("Sorry, please type Y or N for your answer.")
-#     continue
-# else:
-#     break
-# if order_pizza == "Y":
-    
-  # length = len(TimeSlots)
-    # i = 0 
-    # while i < length:
-    # displayCounter = i + 1
-    # print (str(displayCounter)+ "). " + TimeSlots[i])
-    # i +=1
+
 
     
