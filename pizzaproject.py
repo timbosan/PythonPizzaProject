@@ -40,7 +40,7 @@ def order_pizza():
 
 ##Function that gives you overview of order and toppings
 def order_result():
-    print(f'\nYou ordered a {", ".join(order_topping_choice)} pizza. Please pick it up between {order_time_choice}.\n')
+    print(f'\nYou ordered a {", ".join(order_topping_choice)} pizza. Please pick it up between {order_time_choice}.')
 
 ##Main code
 first_name = input('\n\nHello what is your name?  ') 
@@ -59,7 +59,7 @@ if ask_to_order == 'Y':
            break
     order_result()
     til_friday = days_til_friday()
-    print (f'See you in {til_friday} days!!')
+    print (f'See you in {til_friday} days!!\n')
    
 else:
     print("\n\nNo worries! Have a great day.")
