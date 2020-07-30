@@ -3,7 +3,7 @@ Timothy's Pizza Ordering App
 This is a very basic app where the user can choose a Friday time slot to pick up pizza. After selecting a time slot the user will have the option to select from a list of toppings.
 
 Instructions:
--Version of Python: 3.8.2
+-Install Version of Python: 3.8.2
 -Run pizzaproject.py
 
 
