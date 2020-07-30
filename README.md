@@ -4,7 +4,7 @@ This is a very basic app where the user can choose a Friday time slot to pick up
 
 Instructions:
 -Install Version of Python: 3.8.2
--Run pizzaproject.py in terminal.
+-Run pizzaproject.py in terminal: 'python pizzaproject.py'
 
 
 Project Requirements
